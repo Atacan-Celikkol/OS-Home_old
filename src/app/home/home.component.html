@@ -7,10 +7,10 @@
     </div>
 
     <br>
-    <div class="offset-lg-1 col-lg-10">
-        <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.bookmarks">
-            <ng-container *ngIf="bookmarkService.bookmarks">
-                <div class="col-lg-4 mb-4" *ngFor="let item of bookmarkService.bookmarks">
+    <div class="offset-lg-1 col-lg-10 col-md-12">
+        <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
+            <ng-container *ngIf="bookmarkService.Bookmarks">
+                <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let item of bookmarkService.Bookmarks">
                     <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="item" [url]="item.url"
                         [name]="item.name"></bookmark-button>
                 </div>
@@ -18,9 +18,14 @@
         </div>
     </div>
 
-    <div>
-        <button class="btn btn-success" (click)="createBookmark()">+</button>
+    <div class="offset-lg-1 col-lg-10 col-md-12">
+        <div class="text-center row">
+            <div class="col-auto">
+                <button class="btn btn-success" (click)="createBookmark()">+</button>
+            </div>
+        </div>
     </div>
+
 
 </div>
 
