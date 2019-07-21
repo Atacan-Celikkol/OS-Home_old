@@ -1,5 +1,5 @@
 import { LocalstorageService } from './localstorage.service';
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Bookmark } from 'src/models/bookmark';
 
 @Injectable({
@@ -7,8 +7,7 @@ import { Bookmark } from 'src/models/bookmark';
 })
 export class BookmarkService {
 
-    // public readonly bookmarks = this.Bookmarks;
-    private Bookmarks = <Bookmark[]>[];
+    private Bookmarks = [] as Bookmark[];
 
     constructor(private storageService: LocalstorageService) {
         const data = JSON.parse(storageService.getItem('bookmarks'));
@@ -17,26 +16,27 @@ export class BookmarkService {
         }
     }
 
-    get bookmarks() {
-        return this.Bookmarks;
-    }
-
     createBookmark(e: Bookmark) {
         this.Bookmarks.push(e);
-        this.setBookmark();
+        this.setBookmarks();
     }
 
     editBookmark(old: Bookmark, e: Bookmark) {
-        this.bookmarks[this.Bookmarks.indexOf(old)] = e;
-        this.setBookmark();
+        this.Bookmarks[this.Bookmarks.indexOf(old)] = e;
+        this.setBookmarks();
     }
 
     deleteBookmark(e: Bookmark) {
         this.Bookmarks = this.Bookmarks.filter(x => x !== e);
-        this.setBookmark();
+        this.setBookmarks();
     }
 
-    private setBookmark() {
+    updateBookmarks(e: Bookmark[]) {
+        this.Bookmarks = e;
+        this.setBookmarks();
+    }
+
+    private setBookmarks() {
         this.Bookmarks = JSON.parse(this.storageService.setItem('bookmarks', JSON.stringify(this.Bookmarks)));
     }
 

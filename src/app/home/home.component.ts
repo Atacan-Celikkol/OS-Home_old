@@ -1,12 +1,10 @@
 import { BookmarkService } from './../../services/bookmark.service';
-import { Component, OnInit, ViewChild, ElementRef, Input, Output } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Bookmark } from 'src/models/bookmark';
-import { LocalstorageService } from './../../services/localstorage.service';
 import { ContextMenuComponent } from 'ngx-contextmenu';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DragulaService } from 'ng2-dragula';
 import Swal from 'sweetalert2';
-declare var $;
 
 @Component({
   selector: 'app-home',
@@ -15,9 +13,6 @@ declare var $;
 })
 export class HomeComponent {
 
-  @ViewChild('closeModal', { static: true }) closeBtn: ElementRef;
-  bookmarkRequest = <Bookmark>{};
-
   subs = new Subscription();
 
   @ViewChild(ContextMenuComponent, { static: true }) public basicMenu: ContextMenuComponent;
@@ -25,11 +20,12 @@ export class HomeComponent {
   constructor(
     private bookmarkService: BookmarkService,
     private dragulaService: DragulaService
-  ) {
-    this.subs.add(this.dragulaService.dropModel("BOOKMARKS")
+  ) { this.subscribeDragula(); }
+
+  subscribeDragula() {
+    this.subs.add(this.dragulaService.dropModel('BOOKMARKS')
       .subscribe(({ sourceModel, targetModel, item }) => {
-        // ? targetModel: gives ordered list of given model.
-        // TODO: Update bookmarks order.
+        this.bookmarkService.updateBookmarks(targetModel);
       })
     );
   }
@@ -60,11 +56,9 @@ export class HomeComponent {
           type: 'success',
           title: 'Bookmark Updated!',
           confirmButtonText: 'OK!'
-        })
+        });
       }
-    })
-
-    // this.bookmarkService.editBookmark(null, null);
+    });
   }
 
   deleteBookmark(e: Bookmark) {
@@ -81,9 +75,9 @@ export class HomeComponent {
           type: 'success',
           title: 'Bookmark Deleted!',
           confirmButtonText: 'OK!'
-        })
+        });
       }
-    })
+    });
   }
 
   createBookmark() {
@@ -109,9 +103,9 @@ export class HomeComponent {
           type: 'success',
           title: 'Bookmark Created!',
           confirmButtonText: 'OK!'
-        })
+        });
       }
-    })
+    });
   }
 
 }
