@@ -11,7 +11,8 @@
         <div class="text-center row">
             <ng-container *ngIf="bookmarks">
                 <div class="col-lg-4 mb-4" *ngFor="let item of bookmarks">
-                    <bookmark-button [url]="item.url" [name]="item.name"></bookmark-button>
+                    <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="item" [url]="item.url"
+                        [name]="item.name"></bookmark-button>
                 </div>
             </ng-container>
         </div>
@@ -67,3 +68,15 @@
     </div>
 
 </div>
+
+<context-menu>
+    <ng-template contextMenuItem (execute)="editBookmark($event.item)">
+        Edit
+    </ng-template>
+    <ng-template contextMenuItem divider="true">
+        <hr>
+    </ng-template>
+    <ng-template contextMenuItem let-item (execute)="deleteBookmark($event.item)">
+        Delete
+    </ng-template>
+</context-menu>
