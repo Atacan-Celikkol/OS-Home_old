@@ -8,9 +8,9 @@
 
     <br>
     <div class="offset-lg-1 col-lg-10">
-        <div class="text-center row">
-            <ng-container *ngIf="bookmarks">
-                <div class="col-lg-4 mb-4" *ngFor="let item of bookmarks">
+        <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.bookmarks">
+            <ng-container *ngIf="bookmarkService.bookmarks">
+                <div class="col-lg-4 mb-4" *ngFor="let item of bookmarkService.bookmarks">
                     <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="item" [url]="item.url"
                         [name]="item.name"></bookmark-button>
                 </div>
@@ -19,52 +19,7 @@
     </div>
 
     <div>
-        <button class="btn btn-success" data-toggle="modal" data-target="#createBookmarkModal">+</button>
-    </div>
-
-    <div class="modal fade" id="createBookmarkModal" tabindex="-1" role="dialog"
-        aria-labelledby="createBookmarkModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="createBookmarkModalTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <form #createBookmarkForm="ngForm" (ngSubmit)="createBookmarkForm.valid && createBookmark()">
-                    <div class="modal-body">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Name</span>
-                            </div>
-                            <input [(ngModel)]="bookmarkRequest.name" #nameInput="ngModel" name="nameInput" type="text"
-                                class="form-control" placeholder="Github" minlength="1" required>
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Url</span>
-                            </div>
-                            <input [(ngModel)]="bookmarkRequest.url" #urlInput="ngModel" name="urlInput" type="text"
-                                class="form-control" placeholder="https://github.com/Atacan-Celikkol" minlength="1"
-                                required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="reset" (click)="createBookmarkForm.reset()" class="btn btn-secondary"
-                            data-dismiss="modal" #closeModal>
-                            Close
-                        </button>
-                        <button type="submit" class="btn btn-primary" [disabled]="createBookmarkForm.invalid">
-                            Create Bookmark
-                        </button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
+        <button class="btn btn-success" (click)="createBookmark()">+</button>
     </div>
 
 </div>

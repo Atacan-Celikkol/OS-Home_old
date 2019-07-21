@@ -1,54 +1,117 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { BookmarkService } from './../../services/bookmark.service';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output } from '@angular/core';
 import { Bookmark } from 'src/models/bookmark';
 import { LocalstorageService } from './../../services/localstorage.service';
 import { ContextMenuComponent } from 'ngx-contextmenu';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DragulaService } from 'ng2-dragula';
+import Swal from 'sweetalert2';
+declare var $;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.less']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   @ViewChild('closeModal', { static: true }) closeBtn: ElementRef;
-  bookmarks = <Bookmark[]>[];
   bookmarkRequest = <Bookmark>{};
 
+  subs = new Subscription();
 
   @ViewChild(ContextMenuComponent, { static: true }) public basicMenu: ContextMenuComponent;
 
-  constructor(protected storageSerivce: LocalstorageService) {
-    const data = JSON.parse(storageSerivce.getItem('bookmarks'));
-    if (data) {
-      this.bookmarks = data;
-      this.bookmarks = this.bookmarks.sort((val1, val2) => {
-        console.log(val1.name, val2.name);
-
-        if (val1.name > val2.name) {
-          return 1;
-        }
-        return -1;
-      });
-    }
+  constructor(
+    private bookmarkService: BookmarkService,
+    private dragulaService: DragulaService
+  ) {
+    this.subs.add(this.dragulaService.dropModel("BOOKMARKS")
+      .subscribe(({ sourceModel, targetModel, item }) => {
+        // ? targetModel: gives ordered list of given model.
+        // TODO: Update bookmarks order.
+      })
+    );
   }
 
-  ngOnInit() {
-
-  }
-  
   editBookmark(e: Bookmark) {
+    Swal.mixin({
+      input: 'text',
+      confirmButtonText: 'Next &rarr;',
+      showCancelButton: true,
+      inputValidator: result => !result && 'You need to fill inputs!',
+      progressSteps: ['1', '2']
+    }).queue([
+      {
+        title: 'Bookmark Name',
+        text: 'Please write a bookmark name.',
+        inputValue: e.name
+      },
+      {
+        title: 'URL',
+        text: 'Please input bookmark URL.',
+        inputValue: e.url
+      },
+    ]).then((result) => {
+      if (result.value) {
+        console.log(result.value);
+        this.bookmarkService.editBookmark(e, { name: result.value[0], url: result.value[1] });
+        Swal.fire({
+          type: 'success',
+          title: 'Bookmark Updated!',
+          confirmButtonText: 'OK!'
+        })
+      }
+    })
 
+    // this.bookmarkService.editBookmark(null, null);
   }
 
   deleteBookmark(e: Bookmark) {
-    this.bookmarks = this.bookmarks.filter(x => x !== e);
-    this.bookmarks = JSON.parse(this.storageSerivce.setItem('bookmarks', JSON.stringify(this.bookmarks)));
+    Swal.fire({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      cancelButtonColor: '#dc3545',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        this.bookmarkService.deleteBookmark(e);
+        Swal.fire({
+          type: 'success',
+          title: 'Bookmark Deleted!',
+          confirmButtonText: 'OK!'
+        })
+      }
+    })
   }
 
   createBookmark() {
-    this.bookmarks.push(this.bookmarkRequest);
-    this.bookmarks = JSON.parse(this.storageSerivce.setItem('bookmarks', JSON.stringify(this.bookmarks)));
-    this.closeBtn.nativeElement.click();
+    Swal.mixin({
+      input: 'text',
+      confirmButtonText: 'Next &rarr;',
+      showCancelButton: true,
+      inputValidator: result => !result && 'You need to fill inputs!',
+      progressSteps: ['1', '2']
+    }).queue([
+      {
+        title: 'Bookmark Name',
+        text: 'Please write a bookmark name.',
+      },
+      {
+        title: 'URL',
+        text: 'Please input bookmark URL.'
+      },
+    ]).then((result) => {
+      if (result.value) {
+        this.bookmarkService.createBookmark({ name: result.value[0], url: result.value[1] });
+        Swal.fire({
+          type: 'success',
+          title: 'Bookmark Created!',
+          confirmButtonText: 'OK!'
+        })
+      }
+    })
   }
 
 }
