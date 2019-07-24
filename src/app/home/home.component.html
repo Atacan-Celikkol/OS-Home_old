@@ -1,31 +1,32 @@
 <div class="col-12 h-100">
 
     <br>
-
+    <div class="offset-lg-3 col-lg-6 text-center">
+        <h1 class="os-title">Otto Studio</h1>
+    </div>
+    <br>
     <div class="offset-lg-3 col-lg-6 text-center">
         <search-bar></search-bar>
     </div>
 
     <br>
-    <div class="offset-lg-1 col-lg-10 col-md-12">
+    <div class="col-12">
         <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
             <ng-container *ngIf="bookmarkService.Bookmarks">
                 <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let item of bookmarkService.Bookmarks">
-                    <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="item" [url]="item.url"
-                        [name]="item.name"></bookmark-button>
+                    <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="item" [url]="item.url" [name]="item.name"></bookmark-button>
                 </div>
             </ng-container>
         </div>
     </div>
 
-    <div class="offset-lg-1 col-lg-10 col-md-12">
+    <div class="col-12">
         <div class="text-center row">
             <div class="col-auto">
-                <button class="btn btn-success" (click)="createBookmark()">+</button>
+                <button class="btn btn-outline-light" (click)="createBookmark()">+</button>
             </div>
         </div>
     </div>
-
 
 </div>
 
