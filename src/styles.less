@@ -1,4 +1,4 @@
-@blue: #007bff;
+@blue : #007bff;
 @indigo   : #6610f2;
 @purple   : #6f42c1;
 @pink     : #e83e8c;
@@ -9,17 +9,16 @@
 @teal     : #20c997;
 @cyan     : #17a2b8;
 @white    : #fff;
-@gray     : #6c757d;
-@gray-dark: #343a40;
+@gray     : #383838;
+@gray-dark: #212121;
 @primary  : #007bff;
-@secondary: #6c757d;
+@secondary: #383838;
 @success  : #28a745;
 @info     : #17a2b8;
 @warning  : #ffc107;
 @danger   : #dc3545;
 @light    : #f8f9fa;
-@dark     : #343a40;
-
+@dark     : #212121;
 
 html,
 body {
@@ -36,12 +35,48 @@ body {
     border-left: 5px solid @danger;
 }
 
+app-home {
+    .os-title {
+        font-family            : Metal Lord;
+        font-size              : 45pt;
+        background             : -webkit-linear-gradient(#fff, #333);
+        background-clip        : text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .bookmark-btn {
+        font-family: Metal Lord;
+        font-size  : 1.6vw;
+
+        @media (max-width: 767.98px) {
+            font-size: 3vw;
+
+            @media (max-width: 575.98px) {
+                font-size: 8vw;
+            }
+        }
+    }
+
+    .dark {
+        background  : @dark;
+        color       : @light;
+        border-color: @light;
+
+        &:hover,
+        &:focus {
+            background  : @dark;
+            color       : @light;
+            border-color: @blue;
+        }
+    }
+}
+
 
 .ngx-contextmenu {
     ul {
         background: @dark;
         padding   : 0;
-        border    : 1px solid @success;
+        border    : 1px solid @blue;
 
         li.divider {
             border : 1px solid @gray;
@@ -67,9 +102,6 @@ body {
         }
     }
 }
-
-
-
 
 // Dragula CSS
 .gu-mirror {
