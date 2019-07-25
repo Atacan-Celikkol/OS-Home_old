@@ -7,7 +7,7 @@ import { Bookmark } from 'src/models/bookmark';
 })
 export class BookmarkService {
 
-    private Bookmarks = [] as Bookmark[];
+    public Bookmarks = [] as Bookmark[];
 
     constructor(private storageService: LocalstorageService) {
         const data = JSON.parse(storageService.getItem('bookmarks'));

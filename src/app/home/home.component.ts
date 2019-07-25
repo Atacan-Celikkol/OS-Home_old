@@ -18,8 +18,8 @@ export class HomeComponent {
   @ViewChild(ContextMenuComponent, { static: true }) public basicMenu: ContextMenuComponent;
 
   constructor(
-    private bookmarkService: BookmarkService,
-    private dragulaService: DragulaService
+    protected bookmarkService: BookmarkService,
+    protected dragulaService: DragulaService
   ) { this.subscribeDragula(); }
 
   subscribeDragula() {
@@ -30,7 +30,7 @@ export class HomeComponent {
     );
   }
 
-  editBookmark(e: Bookmark) {
+  editBookmark(e: Bookmark, isFooter: boolean) {
     Swal.mixin({
       input: 'text',
       confirmButtonText: 'Next &rarr;',
@@ -51,7 +51,7 @@ export class HomeComponent {
     ]).then((result) => {
       if (result.value) {
         console.log(result.value);
-        this.bookmarkService.editBookmark(e, { name: result.value[0], url: result.value[1] });
+        this.bookmarkService.editBookmark(e, { name: result.value[0], url: result.value[1], imageUrl: null, isFooter });
         Swal.fire({
           type: 'success',
           title: 'Bookmark Updated!',
@@ -80,7 +80,7 @@ export class HomeComponent {
     });
   }
 
-  createBookmark() {
+  createBookmark(isFooter: boolean) {
     Swal.mixin({
       input: 'text',
       confirmButtonText: 'Next &rarr;',
@@ -98,7 +98,7 @@ export class HomeComponent {
       },
     ]).then((result) => {
       if (result.value) {
-        this.bookmarkService.createBookmark({ name: result.value[0], url: result.value[1] });
+        this.bookmarkService.createBookmark({ name: result.value[0], url: result.value[1], imageUrl: null, isFooter });
         Swal.fire({
           type: 'success',
           title: 'Bookmark Created!',

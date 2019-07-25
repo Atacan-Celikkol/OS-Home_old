@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Bookmark } from '../../../models/bookmark';
 
 @Component({
   selector: 'bookmark-button',
@@ -7,8 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class BookmarkButtonComponent {
 
-  @Input() url: string;
-  @Input() name: string;
+  @Input() bookmark: Bookmark;
 
   constructor() { }
 

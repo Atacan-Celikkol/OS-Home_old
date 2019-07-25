@@ -1,43 +1,53 @@
 <div class="col-12 h-100">
 
-    <br>
-    <div class="offset-lg-3 col-lg-6 text-center">
-        <h1 class="os-title">Otto Studio</h1>
-    </div>
-    <br>
-    <div class="offset-lg-3 col-lg-6 text-center">
-        <search-bar></search-bar>
-    </div>
+  <br>
+  <div class="offset-lg-3 col-lg-6 text-center">
+    <h1 class="os-title">Otto Studio</h1>
+  </div>
+  <br>
+  <div class="offset-lg-3 col-lg-6 text-center">
+    <search-bar></search-bar>
+  </div>
 
-    <br>
-    <div class="col-12">
-        <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
-            <ng-container *ngIf="bookmarkService.Bookmarks">
-                <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let item of bookmarkService.Bookmarks">
-                    <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="item" [url]="item.url" [name]="item.name"></bookmark-button>
-                </div>
-            </ng-container>
+  <br>
+  <div class="col-12">
+    <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
+      <ng-container *ngIf="bookmarkService.Bookmarks">
+        <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks">
+          <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
         </div>
+      </ng-container>
     </div>
+  </div>
 
-    <div class="col-12">
-        <div class="text-center row">
-            <div class="col-auto">
-                <button class="btn btn-outline-light" (click)="createBookmark()">+</button>
-            </div>
-        </div>
+  <div class="col-12">
+    <div class="text-center row">
+      <div class="col-auto">
+        <button class="btn btn-outline-light dark" (click)="createBookmark()">+</button>
+      </div>
     </div>
+  </div>
+
+  <div class="col-12">
+    <div class="text-center row" dragula="FOOTERBOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
+      <ng-container *ngIf="bookmarkService.Bookmarks">
+        <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks">
+          <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 
 </div>
 
 <context-menu>
-    <ng-template contextMenuItem (execute)="editBookmark($event.item)">
-        Edit
-    </ng-template>
-    <ng-template contextMenuItem divider="true">
-        <hr>
-    </ng-template>
-    <ng-template contextMenuItem let-item (execute)="deleteBookmark($event.item)">
-        Delete
-    </ng-template>
+  <ng-template contextMenuItem (execute)="editBookmark($event.item)">
+    Edit
+  </ng-template>
+  <ng-template contextMenuItem divider="true">
+    <hr>
+  </ng-template>
+  <ng-template contextMenuItem let-item (execute)="deleteBookmark($event.item)">
+    Delete
+  </ng-template>
 </context-menu>

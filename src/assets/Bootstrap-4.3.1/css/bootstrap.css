@@ -1975,7 +1975,7 @@ select.form-control:focus::-ms-value {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  /* border-radius: 0.2rem; */
 }
 
 .form-control-lg {
@@ -1983,7 +1983,7 @@ select.form-control:focus::-ms-value {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
 }
 
 select.form-control[size], select.form-control[multiple] {
@@ -2972,7 +2972,7 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -3071,7 +3071,7 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
 }
 
 .dropdown-menu-left {
@@ -3531,7 +3531,7 @@ input[type="button"].btn-block {
   white-space: nowrap;
   background-color: #e9ecef;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
 }
 
 .input-group-text input[type="radio"],
@@ -3676,7 +3676,7 @@ input[type="button"].btn-block {
 }
 
 .custom-checkbox .custom-control-label::before {
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
@@ -3720,7 +3720,7 @@ input[type="button"].btn-block {
   left: -2.25rem;
   width: 1.75rem;
   pointer-events: all;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
 }
 
 .custom-switch .custom-control-label::after {
@@ -3729,7 +3729,7 @@ input[type="button"].btn-block {
   width: calc(1rem - 4px);
   height: calc(1rem - 4px);
   background-color: #adb5bd;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
