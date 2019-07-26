@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Bookmark } from '../../../models/bookmark';
+import { Bookmark } from './../../core/models/bookmark';
 
 @Component({
   selector: 'bookmark-button',
