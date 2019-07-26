@@ -1,9 +1,9 @@
-import { BookmarkService } from './../../services/bookmark.service';
 import { Component, ViewChild } from '@angular/core';
-import { Bookmark } from 'src/models/bookmark';
 import { ContextMenuComponent } from 'ngx-contextmenu';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DragulaService } from 'ng2-dragula';
+import { BookmarkService } from '../core/services/bookmark.service';
+import { Bookmark } from '../core/models/bookmark';
 import Swal from 'sweetalert2';
 
 @Component({

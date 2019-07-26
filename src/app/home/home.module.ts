@@ -7,6 +7,7 @@ import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.compo
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ContextMenuModule } from 'ngx-contextmenu';
 import { DragulaModule } from 'ng2-dragula';
+import { BookmarkFilterPipe } from '../core/pipes/bookmark-filter.pipe';
 
 const routes: Routes = [{
   path: '**',
@@ -16,7 +17,7 @@ const routes: Routes = [{
 
 
 @NgModule({
-  declarations: [HomeComponent, BookmarkButtonComponent, SearchBarComponent],
+  declarations: [HomeComponent, BookmarkButtonComponent, SearchBarComponent, BookmarkFilterPipe],
   imports: [
     CommonModule,
     FormsModule,

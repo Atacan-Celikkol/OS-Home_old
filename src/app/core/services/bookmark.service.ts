@@ -1,6 +1,6 @@
 import { LocalstorageService } from './localstorage.service';
 import { Injectable } from '@angular/core';
-import { Bookmark } from 'src/models/bookmark';
+import { Bookmark } from '../models/bookmark';
 
 @Injectable({
     providedIn: 'root'
