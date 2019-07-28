@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
+import { DragulaService } from 'ng2-dragula';
 import { ContextMenuComponent } from 'ngx-contextmenu';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { DragulaService } from 'ng2-dragula';
-import { BookmarkService } from '../core/services/bookmark.service';
-import { Bookmark } from '../core/models/bookmark';
 import Swal from 'sweetalert2';
+import { Bookmark } from '../core/models/bookmark';
+import { BookmarkService } from '../core/services/bookmark.service';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +30,7 @@ export class HomeComponent {
     );
   }
 
-  editBookmark(e: Bookmark, isFooter: boolean) {
+  editBookmark(e: Bookmark, isFooter = false) {
     Swal.mixin({
       input: 'text',
       confirmButtonText: 'Next &rarr;',
@@ -51,7 +51,7 @@ export class HomeComponent {
     ]).then((result) => {
       if (result.value) {
         console.log(result.value);
-        this.bookmarkService.editBookmark(e, { name: result.value[0], url: result.value[1], imageUrl: null, isFooter });
+        this.bookmarkService.editBookmark(e, { name: result.value[0], url: result.value[1] }, isFooter);
         Swal.fire({
           type: 'success',
           title: 'Bookmark Updated!',

@@ -13,7 +13,7 @@
   <div class="col-12">
     <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
       <ng-container *ngIf="bookmarkService.Bookmarks">
-        <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks | bookmarkFilter: false">
+        <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks">
           <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
         </div>
       </ng-container>
@@ -21,7 +21,7 @@
 
     <div class="text-center row">
       <div class="col-auto">
-        <button class="btn btn-outline-light dark" (click)="createBookmark()">+</button>
+        <button class="btn btn-outline-light dark" (click)="createBookmark(false)"><i class="el el-plus-sign"></i></button>
       </div>
     </div>
   </div>
@@ -33,10 +33,10 @@
       <div class="row align-items-baseline">
         <div class="text-center">
           <div class="col-auto">
-            <button class="btn btn-outline-light dark" (click)="createBookmark(true)">+</button>
+            <button class="btn btn-outline-light dark" (click)="createBookmark(true)"><i class="el el-plus-sign"></i></button>
           </div>
         </div>
-        <div class="col row" dragula="FOOTERBOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
+        <div class="col row" dragula="FOOTER-BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
           <ng-container *ngIf="bookmarkService.Bookmarks">
             <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks | bookmarkFilter: true">
               <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
