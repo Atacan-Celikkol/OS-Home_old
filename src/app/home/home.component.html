@@ -14,7 +14,7 @@
     <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
       <ng-container *ngIf="bookmarkService.Bookmarks">
         <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks">
-          <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
+          <bookmark-button [contextMenu]="bookmarkContext" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
         </div>
       </ng-container>
     </div>
@@ -36,10 +36,12 @@
             <button class="btn btn-outline-light dark" (click)="createBookmark(true)"><i class="el el-plus-sign"></i></button>
           </div>
         </div>
-        <div class="col row" dragula="FOOTER-BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
-          <ng-container *ngIf="bookmarkService.Bookmarks">
-            <div class="col-lg-2 col-md-2 col-sm-4" *ngFor="let bookmark of bookmarkService.Bookmarks | bookmarkFilter: true">
-              <bookmark-button [contextMenu]="basicMenu" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
+        <div class="col row" dragula="FOOTER-BOOKMARKS" [(dragulaModel)]="bookmarkService.FooterBookmarks">
+          <ng-container *ngIf="bookmarkService.FooterBookmarks">
+            <div class="d-inline-flex">
+              <bookmark-button [contextMenu]="footerBookmarkContext" *ngFor="let bookmark of bookmarkService.FooterBookmarks" [contextMenuSubject]="bookmark" [bookmark]="bookmark"
+                               [isFooter]="true">
+              </bookmark-button>
             </div>
           </ng-container>
         </div>
@@ -49,7 +51,7 @@
 
 </div>
 
-<context-menu>
+<context-menu #bookmarkContext>
   <ng-template contextMenuItem (execute)="editBookmark($event.item)">
     Edit
   </ng-template>
@@ -57,6 +59,18 @@
     <hr>
   </ng-template>
   <ng-template contextMenuItem let-item (execute)="deleteBookmark($event.item)">
+    Delete
+  </ng-template>
+</context-menu>
+
+<context-menu #footerBookmarkContext>
+  <ng-template contextMenuItem (execute)="editBookmark($event.item, true)">
+    Edit
+  </ng-template>
+  <ng-template contextMenuItem divider="true">
+    <hr>
+  </ng-template>
+  <ng-template contextMenuItem let-item (execute)="deleteBookmark($event.item, true)">
     Delete
   </ng-template>
 </context-menu>

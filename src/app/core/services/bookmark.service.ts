@@ -67,7 +67,7 @@ export class BookmarkService {
 
     private setBookmarks(isFooter = false) {
         isFooter ?
-            this.Bookmarks = JSON.parse(this.storageService.setItem(storageNames.bookmarks, JSON.stringify(this.Bookmarks))) :
-            this.Bookmarks = JSON.parse(this.storageService.setItem(storageNames.footerBookmarks, JSON.stringify(this.FooterBookmarks)));
+            this.FooterBookmarks = JSON.parse(this.storageService.setItem(storageNames.footerBookmarks, JSON.stringify(this.FooterBookmarks))) :
+            this.Bookmarks = JSON.parse(this.storageService.setItem(storageNames.bookmarks, JSON.stringify(this.Bookmarks)));
     }
 }

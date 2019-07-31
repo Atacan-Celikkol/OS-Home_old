@@ -1,11 +1,13 @@
 <ng-container *ngIf="!isFooter; else iconBookmark">
-<div class="mb-4">
-  <a class="btn btn-secondary col bookmark-btn dark" [href]="bookmark.url">{{bookmark.name}}</a>
-</div>
+  <div class="mb-4">
+    <a class="btn btn-secondary col bookmark-btn dark" [href]="bookmark.url">{{bookmark.name}}</a>
+  </div>
 </ng-container>
 
 <ng-template #iconBookmark>
   <div class="mb-4">
-    <a class="btn btn-secondary col bookmark-btn dark" [href]="bookmark.url"></a>
+    <a class="btn btn-secondary col footer-bookmark-btn dark" [href]="bookmark.url">
+      <img [src]="'chrome-search://ntpicon/?size=32%401x&url=' + bookmark.url">
+    </a>
   </div>
 </ng-template>

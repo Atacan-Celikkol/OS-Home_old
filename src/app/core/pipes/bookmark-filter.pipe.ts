@@ -6,6 +6,6 @@ import { Bookmark } from '../models/bookmark';
 })
 export class BookmarkFilterPipe implements PipeTransform {
   transform(items: Bookmark[], isFooter: boolean): any {
-    return items.filter(x => x.isFooter === isFooter);
+    // return items.filter(x => x.isFooter === isFooter);
   }
 }

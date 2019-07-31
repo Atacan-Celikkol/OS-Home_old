@@ -61,7 +61,7 @@ export class HomeComponent {
     });
   }
 
-  deleteBookmark(e: Bookmark) {
+  deleteBookmark(e: Bookmark, isFooter = false) {
     Swal.fire({
       title: 'Are you sure?',
       type: 'warning',
@@ -70,7 +70,7 @@ export class HomeComponent {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
-        this.bookmarkService.deleteBookmark(e);
+        this.bookmarkService.deleteBookmark(e, isFooter);
         Swal.fire({
           type: 'success',
           title: 'Bookmark Deleted!',
@@ -98,7 +98,7 @@ export class HomeComponent {
       },
     ]).then((result) => {
       if (result.value) {
-        this.bookmarkService.createBookmark({ name: result.value[0], url: result.value[1], imageUrl: null, isFooter });
+        this.bookmarkService.createBookmark({ name: result.value[0], url: result.value[1] }, isFooter);
         Swal.fire({
           type: 'success',
           title: 'Bookmark Created!',
