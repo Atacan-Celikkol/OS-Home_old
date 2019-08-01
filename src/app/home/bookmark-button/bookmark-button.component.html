@@ -6,8 +6,8 @@
 
 <ng-template #iconBookmark>
   <div class="mb-4">
-    <a class="btn btn-secondary col footer-bookmark-btn dark" [href]="bookmark.url">
-      <img [src]="'chrome-search://ntpicon/?size=32%401x&url=' + bookmark.url">
+    <a class="btn btn-secondary footer-bookmark-btn dark d-flex" [href]="bookmark.url">
+      <i class="el m-auto {{bookmark.name}}"></i>
     </a>
   </div>
 </ng-template>

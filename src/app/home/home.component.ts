@@ -18,8 +18,8 @@ export class HomeComponent {
   @ViewChild(ContextMenuComponent, { static: true }) public basicMenu: ContextMenuComponent;
 
   constructor(
-    protected bookmarkService: BookmarkService,
-    protected dragulaService: DragulaService
+    public bookmarkService: BookmarkService,
+    public dragulaService: DragulaService
   ) { this.subscribeDragula(); }
 
   subscribeDragula() {

@@ -11,7 +11,7 @@
       "management",
       "history"
    ],
-   "content_security_policy": "script-src ‘self’ ‘unsafe-eval’; object-src ‘self’",
+   "content_security_policy": "script-src 'self' http://xxxx 'unsafe-inline' 'unsafe-eval'",
    "web_accessible_resources": [
       "assets/css/*",
       "assets/js/*",
