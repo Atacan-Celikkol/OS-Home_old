@@ -28,6 +28,11 @@ export class HomeComponent {
         this.bookmarkService.updateBookmarks(targetModel);
       })
     );
+    this.subs.add(this.dragulaService.dropModel('FOOTER-BOOKMARKS')
+      .subscribe(({ sourceModel, targetModel, item }) => {
+        this.bookmarkService.updateBookmarks(targetModel, true);
+      })
+    );
   }
 
   editBookmark(e: Bookmark, isFooter = false) {
@@ -36,12 +41,17 @@ export class HomeComponent {
       confirmButtonText: 'Next &rarr;',
       showCancelButton: true,
       inputValidator: result => !result && 'You need to fill inputs!',
-      progressSteps: ['1', '2']
+      progressSteps: ['1', '2', '3']
     }).queue([
       {
         title: 'Bookmark Name',
-        text: 'Please write a bookmark name.',
         inputValue: e.name
+      },
+      {
+        html: isFooter ? 'Write Font Awesome Icon class here for bookmark icon. </br> <a href="https://fontawesome.com/icons?d=gallery&m=free">Font Awesome Icons</a>' :
+          'Write CSS classes here. (Not required)',
+        inputValue: e.styleClasses,
+        inputValidator: isFooter ? result => !result && 'You need to fill inputs!' : null
       },
       {
         title: 'URL',
@@ -50,8 +60,7 @@ export class HomeComponent {
       },
     ]).then((result) => {
       if (result.value) {
-        console.log(result.value);
-        this.bookmarkService.editBookmark(e, { name: result.value[0], url: result.value[1] }, isFooter);
+        this.bookmarkService.editBookmark(e, { name: result.value[0], styleClasses: result.value[1], url: result.value[2] }, isFooter);
         Swal.fire({
           type: 'success',
           title: 'Bookmark Updated!',
@@ -66,7 +75,6 @@ export class HomeComponent {
       title: 'Are you sure?',
       type: 'warning',
       showCancelButton: true,
-      cancelButtonColor: '#dc3545',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
@@ -86,11 +94,16 @@ export class HomeComponent {
       confirmButtonText: 'Next &rarr;',
       showCancelButton: true,
       inputValidator: result => !result && 'You need to fill inputs!',
-      progressSteps: ['1', '2']
+      progressSteps: ['1', '2', '3']
     }).queue([
       {
         title: 'Bookmark Name',
-        text: 'Please write a bookmark name.',
+        text: 'Please write a bookmark name.'
+      },
+      {
+        html: isFooter ? 'Write Font Awesome Icon class here for bookmark icon. </br> <a href="https://fontawesome.com/icons?d=gallery&m=free">Font Awesome Icons</a>' :
+          'Write CSS classes here. (Not required)',
+        inputValidator: isFooter ? result => !result && 'You need to fill inputs!' : null
       },
       {
         title: 'URL',
@@ -98,7 +111,7 @@ export class HomeComponent {
       },
     ]).then((result) => {
       if (result.value) {
-        this.bookmarkService.createBookmark({ name: result.value[0], url: result.value[1] }, isFooter);
+        this.bookmarkService.createBookmark({ name: result.value[0], styleClasses: result.value[1], url: result.value[2] }, isFooter);
         Swal.fire({
           type: 'success',
           title: 'Bookmark Created!',
