@@ -25,6 +25,14 @@ body {
   display    : contents;
   height     : 100%;
   font-family: Bahnschrift;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .cdk-overlay-container {
+    z-index: 1031;
+  }
 }
 
 .ng-valid[required],
@@ -40,9 +48,10 @@ app-home {
   .os-title {
     font-family            : Metal Lord;
     font-size              : 45pt;
-    background             : -webkit-linear-gradient(#fff, #333);
+    background             : -webkit-linear-gradient(@dark, @white, @dark);
     background-clip        : text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px fade(@white, 80%);
   }
 
   .dark {
