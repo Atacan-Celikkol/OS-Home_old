@@ -1,0 +1,72 @@
+.swal2-popup {
+   background: @dark  !important;
+   color     : @light  !important;
+   box-shadow: 0 0 3px #ffffff30;
+
+   button {
+      transition: 350ms;
+      background: @dark  !important;
+      color     : @light;
+      border    : 1px solid !important;
+
+      &.swal2-cancel {
+         border-color: @danger  !important;
+
+         &:hover,
+         &:focus {
+            box-shadow: 0 0 10px @danger;
+         }
+      }
+
+      &.swal2-confirm {
+         border-color: @success  !important;
+
+         &:hover,
+         &:focus {
+            box-shadow: 0 0 10px @success;
+         }
+      }
+   }
+
+   input {
+      transition  : 350ms !important;
+      background  : @dark  !important;
+      color       : @light;
+      border      : 1px solid !important;
+      border-color: @primary  !important;
+      box-shadow  : none !important;
+
+      &:hover,
+      &:focus {
+         box-shadow: 0 0 10px @primary  !important;
+      }
+
+      &.swal2-inputerror {
+         border-color: @danger;
+
+         &:hover,
+         &:focus {
+            box-shadow: 0 0 10px @danger  !important;
+         }
+      }
+   }
+
+   .swal2-progress-steps {
+
+      .swal2-progress-step-line {
+         background: lighten(@primary, 30%) !important;
+      }
+
+      .swal2-progress-step {
+         background: lighten(@primary, 30%) !important;
+
+         &.swal2-active-progress-step {
+            background: @primary  !important;
+         }
+      }
+   }
+
+   .swal2-validation-message {
+      background: fade(@danger, 5%);
+   }
+}
