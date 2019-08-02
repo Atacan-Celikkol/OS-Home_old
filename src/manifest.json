@@ -1,0 +1,25 @@
+{
+   "manifest_version": 2,
+   "name": "OttoLauncher",
+   "version": "1.0",
+   "description": "Home sweet home.",
+   "browser_action": {
+      "default_icon": "favicon.ico",
+      "default_popup": "index.html"
+   },
+   "permissions": [
+      "management",
+      "history"
+   ],
+   "content_security_policy": "script-src 'self' http://xxxx 'unsafe-inline' 'unsafe-eval'",
+   "web_accessible_resources": [
+      "assets/css/*",
+      "assets/js/*",
+      "assets/fonts/*"
+   ],
+   "chrome_url_overrides": {
+      "newtab": "index.html"
+   }
+}
+
+

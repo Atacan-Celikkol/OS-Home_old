@@ -1,73 +1,91 @@
 [{
     "name": "Google",
-    "url": "https://www.google.com/"
+    "url": "https://www.google.com/",
+    "isFooter": false
   },
   {
     "name": "Wikipedia",
-    "url": "https://www.wikizero.com/"
+    "url": "https://www.wikizero.com/",
+    "isFooter": false
   },
   {
     "name": "Facebook",
-    "url": "https://www.facebook.com/"
+    "url": "https://www.facebook.com/",
+    "isFooter": false
   },
   {
     "name": "LinkedIn",
-    "url": "https://www.linkedin.com"
+    "url": "https://www.linkedin.com",
+    "isFooter": false
   },
   {
     "name": "Twitter",
-    "url": "http://twitter.com"
+    "url": "http://twitter.com",
+    "isFooter": false
   },
   {
     "name": "WhatsApp",
-    "url": "https://web.whatsapp.com/"
+    "url": "https://web.whatsapp.com/",
+    "isFooter": false
   },
   {
     "name": "YouTube",
-    "url": "https://youtube.com"
+    "url": "https://youtube.com",
+    "isFooter": false
   },
   {
     "name": "HepsiBurada",
-    "url": "https://hepsiburada.com"
+    "url": "https://hepsiburada.com",
+    "isFooter": false
   },
   {
     "name": "GittiGidiyor",
-    "url": "https://gittigidiyor.com"
+    "url": "https://gittigidiyor.com",
+    "isFooter": false
   },
   {
     "name": "N11",
-    "url": "https://n11.com"
+    "url": "https://n11.com",
+    "isFooter": false
   },
   {
     "name": "PirateBay",
-    "url": "https://pirateproxy.live/"
+    "url": "https://pirateproxy.live/",
+    "isFooter": false
   },
   {
     "name": "Zamunda",
-    "url": "http://zamunda.net/"
+    "url": "http://zamunda.net/",
+    "isFooter": false
   },
   {
     "name": "Webrazzi",
-    "url": "https://webrazzi.com/"
+    "url": "https://webrazzi.com/",
+    "isFooter": false
   },
   {
     "name": "W3Schools",
-    "url": "https://www.w3schools.com/"
+    "url": "https://www.w3schools.com/",
+    "isFooter": false
   },
   {
     "name": "HackerRank",
-    "url": "https://www.hackerrank.com/"
+    "url": "https://www.hackerrank.com/",
+    "isFooter": false
   },
   {
     "name": "BilimFili",
-    "url": "https://bilimfili.com"
+    "url": "https://bilimfili.com",
+    "isFooter": false
   },
   {
     "name": "Fizikist",
-    "url": "https://www.fizikist.com/"
+    "url": "https://www.fizikist.com/",
+    "isFooter": false
   },
   {
     "name": "Modem",
-    "url": "http://192.168.2.1/login.html"
+    "url": "http://192.168.2.1/login.html",
+    "isFooter": false
   }
 ]
