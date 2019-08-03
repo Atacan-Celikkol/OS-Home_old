@@ -13,24 +13,30 @@ body {
   display            : contents;
   height             : 100%;
   font-family        : Bahnschrift;
-  background-image   : url();
+  background-image   : url("assets/Images/Asari.jpeg");
   background-repeat  : no-repeat;
   background-position: center;
   background-size    : cover;
 }
 
 .dark {
-  background  : @dark;
+  background  : fade(@black, 40%);
   color       : @light;
   border-color: @light;
   transition  : 350ms;
 
+  &::placeholder {
+    color: fade(@white, 40%);
+    text-shadow: none;
+  }
+
   &:hover,
   &:focus {
-    box-shadow  : 0 0 10px @blue;
-    background  : @dark;
+    box-shadow  : 0 0 10px @white;
+    background  : fade(@black, 70%);
+    text-shadow : 0 0 5px @white;
     color       : @light;
-    border-color: @blue;
+    border-color: @white;
   }
 }
 
