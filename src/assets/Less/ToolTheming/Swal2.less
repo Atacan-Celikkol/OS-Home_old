@@ -1,11 +1,11 @@
 .swal2-popup {
-   background: @dark  !important;
-   color     : @light  !important;
-   box-shadow: 0 0 3px #ffffff30;
+   background     : @default-background  !important;
+   background-size: 10px !important;
+   color          : @light  !important;
 
    button {
-      transition: 350ms;
-      background: @dark  !important;
+      transition: @default-transition;
+      background: transparent !important;
       color     : @light;
       border    : 1px solid !important;
 
@@ -29,8 +29,8 @@
    }
 
    input {
-      transition  : 350ms !important;
-      background  : @dark  !important;
+      transition  : @default-transition  !important;
+      background  : transparent !important;
       color       : @light;
       border      : 1px solid !important;
       border-color: @primary  !important;

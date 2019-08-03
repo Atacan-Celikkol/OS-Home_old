@@ -10,23 +10,21 @@
 
 html,
 body {
-  display            : contents;
-  height             : 100%;
-  font-family        : Bahnschrift;
-  background-image   : url("assets/Images/Asari.jpeg");
-  background-repeat  : no-repeat;
-  background-position: center;
-  background-size    : cover;
+  display        : contents;
+  height         : 100%;
+  font-family    : Bahnschrift;
+  background     : @default-background;
+  background-size: 10px;
 }
 
 .dark {
   background  : fade(@black, 40%);
   color       : @light;
   border-color: @light;
-  transition  : 350ms;
+  transition  : @default-transition;
 
   &::placeholder {
-    color: fade(@white, 40%);
+    color      : fade(@white, 40%);
     text-shadow: none;
   }
 
@@ -41,7 +39,7 @@ body {
 }
 
 .btn {
-  transition: 350ms;
+  transition: @default-transition;
 
   &:hover,
   &:focus {
