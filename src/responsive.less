@@ -1,0 +1,35 @@
+@import "assets/Less/Variables.less";
+
+
+@media (max-width: 500px) {
+   .bookmark-btn {
+      font-size: 1em !important;
+      padding  : 10px 0;
+   }
+
+   .add-bookmark-btn {
+      display: none;
+   }
+
+   .input-group {
+
+      input,
+      button {
+         font-size: 1em
+      }
+   }
+
+   .footer-bookmarks-container {
+      margin         : 0 !important;
+      background     : @default-background  !important;
+      background-size: 10px !important;
+      border-top     : 2px solid @white;
+
+      .float-right {
+         float: none !important;
+         div {
+            width: 100%;
+         }
+      }
+   }
+}

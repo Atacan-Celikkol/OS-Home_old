@@ -25,10 +25,12 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              "src/OttoStudio.png",
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "src/responsive.less"
             ],
             "scripts": []
           },
@@ -85,10 +87,12 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
+              "src/OttoStudio.png",
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "src/responsive.less"
             ],
             "scripts": []
           }
