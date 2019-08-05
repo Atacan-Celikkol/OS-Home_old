@@ -21,7 +21,7 @@
 
     <div class="text-center row">
       <div class="col-auto">
-        <button class="btn btn-outline-light dark add-bookmark-btn" (click)="createBookmark(false)"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-outline-light dark d-none-xs" (click)="createBookmark(false)"><i class="fa fa-plus"></i></button>
       </div>
     </div>
   </div>
@@ -33,12 +33,12 @@
           <div class="col">
             <div class="float-right">
               <div class="d-inline-flex align-items-center">
-                <div class="d-inline-flex">
-                  <button class="btn btn-outline-light dark add-bookmark-btn" (click)="createBookmark(true)"><i class="fa fa-plus"></i></button>
+                <div class="d-inline-flex d-none-xs">
+                  <button class="btn btn-outline-light dark" (click)="createBookmark(true)"><i class="fa fa-plus"></i></button>
                 </div>
-                <div>
+                <div class="d-inline-flex">
                   <ng-container *ngIf="bookmarkService.FooterBookmarks">
-                    <div class="d-inline-flex ml-2" dragula="FOOTER-BOOKMARKS" [(dragulaModel)]="bookmarkService.FooterBookmarks">
+                    <div class="d-inline-flex ml-2 m-auto-xs w-auto-xs" dragula="FOOTER-BOOKMARKS" [(dragulaModel)]="bookmarkService.FooterBookmarks">
                       <bookmark-button [contextMenu]="footerBookmarkContext" *ngFor="let bookmark of bookmarkService.FooterBookmarks" [contextMenuSubject]="bookmark"
                                        [bookmark]="bookmark" [isFooter]="true">
                       </bookmark-button>
