@@ -26,9 +26,9 @@
             "assets": [
               "src/favicon.ico",
               "src/OttoStudio.png",
+              "src/assets",
               "src/manifest.json",
-              "src/data.json",
-              "src/assets"
+              "src/data.json"
             ],
             "styles": [
               "src/styles.less",
@@ -90,9 +90,9 @@
             "assets": [
               "src/favicon.ico",
               "src/OttoStudio.png",
+              "src/assets",
               "src/manifest.json",
-              "src/data.json",
-              "src/assets"
+              "src/data.json"
             ],
             "styles": [
               "src/styles.less",

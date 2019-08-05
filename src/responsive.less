@@ -1,15 +1,28 @@
 @import "assets/Less/Variables.less";
 
 
-@media (max-width: 500px) {
-   .bookmark-btn {
-      font-size: 1em !important;
-      padding  : 10px 0;
+@media (max-width: 575px) {
+   .d-none-xs {
+      display: none !important;
    }
 
-   .add-bookmark-btn {
-      display: none;
+   .d-contents-xs {
+      display: contents;
    }
+
+   .w-auto-xs {
+      width: auto !important;
+   }
+
+   .m-auto-xs {
+      margin: auto !important;
+   }
+
+   .m-xs-0 {
+      margin: 0 !important;
+   }
+
+   .bookmark-btn {}
 
    .input-group {
 
@@ -27,9 +40,23 @@
 
       .float-right {
          float: none !important;
+
          div {
             width: 100%;
          }
       }
+   }
+}
+
+
+
+.bookmark-btn {
+   @media(max-width: 767px) {
+      font-size: 2.8vw !important;
+   }
+
+   @media (max-width: 575px) {
+      font-size: 4.8vw !important;
+      padding  : 10px 0;
    }
 }
