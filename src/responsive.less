@@ -1,7 +1,7 @@
 @import "assets/Less/Variables.less";
 
 
-@media (max-width: 500px) {
+@media (max-width: 575px) {
    .d-none-xs {
       display: none !important;
    }
@@ -22,10 +22,7 @@
       margin: 0 !important;
    }
 
-   .bookmark-btn {
-      font-size: 1em !important;
-      padding  : 10px 0;
-   }
+   .bookmark-btn {}
 
    .input-group {
 
@@ -48,5 +45,18 @@
             width: 100%;
          }
       }
+   }
+}
+
+
+
+.bookmark-btn {
+   @media(max-width: 767px) {
+      font-size: 2.8vw !important;
+   }
+
+   @media (max-width: 575px) {
+      font-size: 4.8vw !important;
+      padding  : 10px 0;
    }
 }
