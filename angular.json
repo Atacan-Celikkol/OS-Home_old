@@ -26,15 +26,9 @@
             "assets": [
               "src/favicon.ico",
               "src/OttoStudio.png",
-<<<<<<< HEAD
               "src/assets",
               "src/manifest.json",
               "src/data.json"
-=======
-              "src/manifest.json",
-              "src/data.json",
-              "src/assets"
->>>>>>> master
             ],
             "styles": [
               "src/styles.less",
