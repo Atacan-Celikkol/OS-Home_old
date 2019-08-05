@@ -27,6 +27,7 @@
               "src/favicon.ico",
               "src/OttoStudio.png",
               "src/manifest.json",
+              "src/data.json",
               "src/assets"
             ],
             "styles": [
@@ -89,6 +90,7 @@
               "src/favicon.ico",
               "src/OttoStudio.png",
               "src/manifest.json",
+              "src/data.json",
               "src/assets"
             ],
             "styles": [
