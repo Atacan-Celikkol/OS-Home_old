@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import data from '../../../data.json';
 import { Bookmark } from '../models/bookmark';
 import { LocalStorageService } from './localStorage.service';
 
@@ -18,11 +19,19 @@ export class BookmarkService {
     constructor(private storageService: LocalStorageService) {
         const bookmarks = JSON.parse(storageService.getItem(storageNames.bookmarks));
         const footerBookmarks = JSON.parse(storageService.getItem(storageNames.footerBookmarks));
+
         if (bookmarks) {
             this.Bookmarks = bookmarks;
+        } else {
+            this.Bookmarks = data.bookmarks;
+            this.setBookmarks();
         }
+
         if (footerBookmarks) {
             this.FooterBookmarks = footerBookmarks;
+        } else {
+            this.FooterBookmarks = data.footer_bookmarks;
+            this.setBookmarks();
         }
     }
     createBookmark(e: Bookmark, isFooter = false) {
