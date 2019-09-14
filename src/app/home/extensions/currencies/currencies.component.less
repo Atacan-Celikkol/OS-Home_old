@@ -1,0 +1,46 @@
+@import "../../../../assets/Less/Variables.less";
+
+.main-container {
+   padding   : 10px 6px;
+   margin    : 10px 0;
+   // border    : 1px solid;
+
+   h3 {
+      margin       : 0;
+      color        : @white;
+      border-bottom: 2px solid @primary;
+      padding      : 5px 0px;
+      margin-bottom: 8px;
+   }
+
+   .currencies-container {
+      margin : 10px 0;
+      display: inline-flex;
+
+      .currency-container {
+         display: inline-flex;
+         margin : 0 5px;
+
+         .currency-sign-container {
+            background-color : @primary;
+            width            : 40px;
+            height           : 40px;
+            display          : inline-grid;
+            -webkit-box-align: center;
+            align-items      : center;
+
+            b {
+               color    : @white;
+               font-size: 20pt
+            }
+         }
+
+         .currency-value {
+            color      : @white;
+            align-self : center;
+            margin-left: 5px;
+            font-size  : 15pt;
+         }
+      }
+   }
+}
