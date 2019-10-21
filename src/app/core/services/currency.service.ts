@@ -2,16 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 import { CurrenciesResponse } from '../models/currency';
 
 const Endpoints = {
-   GetLatest: 'https://api.exchangeratesapi.io/latest?',
+   BaseUrl: 'http://data.fixer.io/api/',
+   GetLatest: (symbols) =>
+      `${Endpoints.BaseUrl}latest?access_key=${environment.fixerIo_api_key}&symbols=${symbols}`,
 };
-
-const Filters = {
-   BaseCurrency: (base) => 'base=' + base,
-   BySymbols: (symbols: string) => 'symbols=' + symbols // USD,TRY
-}
 
 @Injectable({
    providedIn: 'root'
@@ -20,10 +18,8 @@ export class CurrencyService {
    constructor(private httpClient: HttpClient) {
    }
 
-   getCurrencies(base: string = '', symbols: string = ''): Observable<CurrenciesResponse> {
-      const url = Endpoints.GetLatest +
-         Filters.BaseCurrency(base) + '&' +
-         Filters.BySymbols(symbols);
+   getCurrencies(base, currencies): Observable<CurrenciesResponse> {
+      const url = Endpoints.GetLatest(currencies);
 
       return this.httpClient.get<CurrenciesResponse>(url).pipe(
          retry(1),

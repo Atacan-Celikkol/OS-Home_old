@@ -31,7 +31,8 @@ export enum Currencies {
    AUD = 'AUD',
    ILS = 'ILS',
    KRW = 'KRW',
-   PLN = 'PLN'
+   PLN = 'PLN',
+   BTC = 'BTC',
 }
 
 export interface CurrenciesResponse {

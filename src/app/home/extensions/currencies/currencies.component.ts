@@ -12,14 +12,19 @@ export class CurrenciesComponent {
   isLoading = true;
 
   constructor(private currencyService: CurrencyService) {
-    this.currencyService.getCurrencies(Currencies.TRY, `${Currencies.USD},${Currencies.EUR},${Currencies.GBP}`).subscribe(x => {
+    this.currencyService.getCurrencies(Currencies.TRY, `${Currencies.TRY},${Currencies.USD},${Currencies.EUR},${Currencies.GBP},${Currencies.BTC}`).subscribe(x => {
+      Object.keys(x.rates).forEach(t => {
+        if (t !== 'TRY') {
+          x.rates[t] = this.getReadableValue(x.rates.TRY, x.rates[t]);
+        }
+      });
       this.exchangeRates = x;
       this.isLoading = false;
     });
   }
 
-  getReadableValue(val: number) {
-    const split = (1 / val).toString().split('.');
+  getReadableValue(val1: number, val2: number) {
+    const split = (val1 / val2).toString().split('.');
     return split[0] + '.' + split[1].slice(0, 2);
   }
 }
