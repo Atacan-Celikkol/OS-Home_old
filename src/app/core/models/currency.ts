@@ -35,6 +35,10 @@ export enum Currencies {
 }
 
 export interface CurrenciesResponse {
+   success: boolean;
+   timestamp: number;
+   base: string;
+   date: string;
    rates: {
       CAD: number,
       HKD: number,
@@ -68,8 +72,7 @@ export interface CurrenciesResponse {
       AUD: number,
       ILS: number,
       KRW: number,
-      PLN: number
+      PLN: number,
+      BTC: number,
    };
-   base: string; // TRY
-   date: string; // 2019-09-13
 }
