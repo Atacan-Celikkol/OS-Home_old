@@ -1,33 +1,43 @@
-<div class="main-container">
+<div class="main-container fade-in">
    <h3>Exchange Rates</h3>
    <div class="currencies-container">
       <div class="spinner-grow text-primary" *ngIf="isLoading">
          <span class="sr-only">Loading...</span>
       </div>
       <ng-container *ngIf="!isLoading">
-         <div class="currency-container">
-            <div class="currency-sign-container">
-               <b>$</b>
+         <div class="fade-in">
+            <div class="currency-container">
+               <div class="currency-sign-container">
+                  <b>$</b>
+               </div>
+               <b class="currency-value">
+                  {{exchangeRates.rates.USD}}
+               </b>
             </div>
-            <b class="currency-value">
-               {{getReadableValue(exchangeRates.rates.USD)}}
-            </b>
-         </div>
-         <div class="currency-container">
-            <div class="currency-sign-container">
-               <b>€</b>
+            <div class="currency-container">
+               <div class="currency-sign-container">
+                  <b>€</b>
+               </div>
+               <b class="currency-value">
+                  {{exchangeRates.rates.EUR}}
+               </b>
             </div>
-            <b class="currency-value">
-               {{getReadableValue(exchangeRates.rates.EUR)}}
-            </b>
-         </div>
-         <div class="currency-container">
-            <div class="currency-sign-container">
-               <b>£</b>
+            <div class="currency-container">
+               <div class="currency-sign-container">
+                  <b>£</b>
+               </div>
+               <b class="currency-value">
+                  {{exchangeRates.rates.GBP}}
+               </b>
             </div>
-            <b class="currency-value">
-               {{getReadableValue(exchangeRates.rates.GBP)}}
-            </b>
+            <div class="currency-container">
+               <div class="currency-sign-container">
+                  <b>฿</b>
+               </div>
+               <b class="currency-value">
+                  {{exchangeRates.rates.BTC}}
+               </b>
+            </div>
          </div>
       </ng-container>
    </div>
