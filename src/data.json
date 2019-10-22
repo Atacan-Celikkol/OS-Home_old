@@ -92,37 +92,35 @@
     }
   ],
   "footer_bookmarks": [
-    [
-      {
-        "name": "Spotify",
-        "styleClasses": "fab fa-spotify text-success",
-        "url": "https://open.spotify.com"
-      },
-      {
-        "name": "Outlook",
-        "url": "https://outlook.live.com/mail/inbox",
-        "styleClasses": "far fa-envelope text-primary"
-      },
-      {
-        "name": "GMail",
-        "url": "https://mail.google.com/mail",
-        "styleClasses": "far fa-envelope text-danger"
-      },
-      {
-        "name": "Slack",
-        "styleClasses": "fab fa-slack",
-        "url": "https://app.slack.com/client/"
-      },
-      {
-        "name": "Github",
-        "url": "https://github.com/Atacan-Celikkol",
-        "styleClasses": "fab fa-github"
-      },
-      {
-        "name": "VS Geek",
-        "url": "https://geek.visualstudio.com",
-        "styleClasses": "fab fa-git"
-      }
-    ]
+    {
+      "name": "Spotify",
+      "styleClasses": "fab fa-spotify text-success",
+      "url": "https://open.spotify.com"
+    },
+    {
+      "name": "Outlook",
+      "url": "https://outlook.live.com/mail/inbox",
+      "styleClasses": "far fa-envelope text-primary"
+    },
+    {
+      "name": "GMail",
+      "url": "https://mail.google.com/mail",
+      "styleClasses": "far fa-envelope text-danger"
+    },
+    {
+      "name": "Slack",
+      "styleClasses": "fab fa-slack",
+      "url": "https://app.slack.com/client/"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/Atacan-Celikkol",
+      "styleClasses": "fab fa-github"
+    },
+    {
+      "name": "VS Geek",
+      "url": "https://geek.visualstudio.com",
+      "styleClasses": "fab fa-git"
+    }
   ]
 }
