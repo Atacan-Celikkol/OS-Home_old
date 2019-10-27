@@ -4,16 +4,23 @@
    font-family            : Metal Lord;
    background             : -webkit-linear-gradient(@dark, @white, @dark);
    background-clip        : text;
+   margin                 : 0;
    -webkit-text-fill-color: transparent;
    -webkit-text-stroke    : 1px fade(@white, 80%);
 }
 
-.extensions-container{
+.extensions-container {
    display: inline-grid;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 575px) {
    .os-title {
-      font-size: 45pt;
+      font-size: 8vh;
+   }
+}
+
+@media (max-width: 575px) {
+   .os-title {
+      font-size: 10vw;
    }
 }

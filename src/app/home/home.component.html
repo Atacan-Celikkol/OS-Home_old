@@ -23,9 +23,9 @@
       </ng-container>
     </div>
 
-    <div class="text-center row" style="margin-bottom: 80px">
+    <div class="text-center row">
       <div class="col-auto">
-        <button class="btn btn-outline-light dark d-none-xs" (click)="createBookmark(false)"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-outline-light os-dark d-none-xs" (click)="createBookmark(false)"><i class="fa fa-plus"></i></button>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
             <div class="float-right">
               <div class="d-inline-flex align-items-center">
                 <div class="d-inline-flex d-none-xs">
-                  <button class="btn btn-outline-light dark" (click)="createBookmark(true)"><i class="fa fa-plus"></i></button>
+                  <button class="btn btn-outline-light os-dark" (click)="createBookmark(true)"><i class="fa fa-plus"></i></button>
                 </div>
                 <div class="d-inline-flex">
                   <ng-container *ngIf="bookmarkService.FooterBookmarks">

@@ -94,22 +94,22 @@
   "footer_bookmarks": [
     {
       "name": "Spotify",
-      "styleClasses": "fab fa-spotify text-success",
+      "styleClasses": "fab fa-spotify green",
       "url": "https://open.spotify.com"
     },
     {
       "name": "Outlook",
       "url": "https://outlook.live.com/mail/inbox",
-      "styleClasses": "far fa-envelope text-primary"
+      "styleClasses": "far fa-envelope blue"
     },
     {
       "name": "GMail",
       "url": "https://mail.google.com/mail",
-      "styleClasses": "far fa-envelope text-danger"
+      "styleClasses": "far fa-envelope red"
     },
     {
       "name": "Slack",
-      "styleClasses": "fab fa-slack",
+      "styleClasses": "fab fa-slack purple",
       "url": "https://app.slack.com/client/"
     },
     {

@@ -1,7 +1,7 @@
 @import "assets/Less/Variables.less";
 
 
-@media (max-width: 575px) {
+@media (max-width: @popup-size) {
    .d-none-xs {
       display: none !important;
    }
@@ -21,8 +21,6 @@
    .m-xs-0 {
       margin: 0 !important;
    }
-
-   .bookmark-btn {}
 
    .input-group {
 
@@ -55,7 +53,7 @@
       font-size: 2.8vw !important;
    }
 
-   @media (max-width: 575px) {
+   @media (max-width: @popup-size) {
       font-size: 4.8vw !important;
       padding  : 10px 0;
    }

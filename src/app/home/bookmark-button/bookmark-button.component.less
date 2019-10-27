@@ -1,3 +1,5 @@
+@import "../../../assets/Less/Variables.less";
+
 .bookmark-btn {
   padding    : 4vh 0;
   font-family: Metal Lord;
@@ -10,8 +12,25 @@
   border-radius: 50%;
   margin       : 5px;
   font-size    : 18pt;
+
+  background  : fade(@black, 40%);
+  color       : @light;
+  border-color: @light;
+  transition  : @default-transition;
+
+  &:hover {
+    box-shadow: 0 0 10px;
+    background: fade(@black, 70%);
+  }
+
 }
 
 small {
   color: #fff;
+}
+
+@media (max-width: @popup-size) {
+  .footer-bookmark-name {
+    display: none;
+  }
 }

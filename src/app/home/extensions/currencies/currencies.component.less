@@ -1,45 +1,46 @@
 @import "../../../../assets/Less/Variables.less";
 
 .main-container {
-   padding   : 10px 6px;
-   margin    : 10px 0;
-   // border    : 1px solid;
+   margin: 1.5vh 0;
 
    h3 {
-      margin       : 0;
-      color        : @white;
-      border-bottom: 2px solid @primary;
-      padding      : 5px 0px;
-      margin-bottom: 8px;
+      margin        : 0;
+      color         : @white;
+      border-bottom : 2px solid @primary;
+      padding-bottom: 0.35vh;
+
+      @media (min-width: @popup-size) {
+         font-size: 3.2vh;
+      }
    }
 
    .currencies-container {
-      margin : 10px 0;
+      margin : 1vh 0;
       display: inline-flex;
 
       .currency-container {
          display: inline-flex;
-         margin : 0 5px;
+         margin : 0 0.5vh;
 
          .currency-sign-container {
             background-color : @primary;
-            width            : 40px;
-            height           : 40px;
+            width            : 4vh;
+            height           : 4vh;
             display          : inline-grid;
             -webkit-box-align: center;
             align-items      : center;
 
             b {
                color    : @white;
-               font-size: 20pt
+               font-size: 3vh
             }
          }
 
          .currency-value {
             color      : @white;
             align-self : center;
-            margin-left: 5px;
-            font-size  : 15pt;
+            margin-left: 0.5vh;
+            font-size  : 2.2vh;
          }
       }
    }
