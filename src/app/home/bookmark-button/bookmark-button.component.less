@@ -7,11 +7,20 @@
 }
 
 .footer-bookmark-btn {
-  height       : 50px;
-  width        : 50px;
+  height       : 12vw;
+  width        : 12vw;
+  max-width    : 60px;
+  max-height   : 60px;
+  padding      : 0;
   border-radius: 50%;
-  margin       : 5px;
-  font-size    : 18pt;
+  margin       : 0.3vh;
+  font-size    : 2em;
+
+  // font-size    : 3.6vh;
+  @media (max-width: @popup-size) {
+    font-size: 7vw;
+  }
+
 
   background  : fade(@black, 40%);
   color       : @light;
@@ -22,7 +31,6 @@
     box-shadow: 0 0 10px;
     background: fade(@black, 70%);
   }
-
 }
 
 small {
