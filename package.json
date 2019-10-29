@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "deploy": "ng deploy --base-href=https://atacan-celikkol.github.io/OS-Home/",
     "start": "ng serve --o",
     "build": "ng build",
     "test": "ng test",
