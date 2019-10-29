@@ -1,0 +1,126 @@
+{
+  "bookmarks": [
+    {
+      "name": "Google",
+      "url": "https://www.google.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "Wikipedia",
+      "url": "https://www.wikizero.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "Twitter",
+      "url": "http://twitter.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "WhatsApp",
+      "url": "https://web.whatsapp.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "HepsiBurada",
+      "url": "https://hepsiburada.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "GittiGidiyor",
+      "url": "https://gittigidiyor.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "N11",
+      "url": "https://n11.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "PirateBay",
+      "url": "https://pirateproxy.live/",
+      "styleClasses": ""
+    },
+    {
+      "name": "Zamunda",
+      "url": "http://zamunda.net/",
+      "styleClasses": ""
+    },
+    {
+      "name": "Webrazzi",
+      "url": "https://webrazzi.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "W3Schools",
+      "url": "https://www.w3schools.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "HackerRank",
+      "url": "https://www.hackerrank.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "BilimFili",
+      "url": "https://bilimfili.com",
+      "styleClasses": ""
+    },
+    {
+      "name": "Fizikist",
+      "url": "https://www.fizikist.com/",
+      "styleClasses": ""
+    },
+    {
+      "name": "Modem",
+      "url": "http://192.168.2.1/login.html",
+      "styleClasses": ""
+    }
+  ],
+  "footer_bookmarks": [
+    {
+      "name": "Spotify",
+      "styleClasses": "fab fa-spotify green",
+      "url": "https://open.spotify.com"
+    },
+    {
+      "name": "Outlook",
+      "url": "https://outlook.live.com/mail/inbox",
+      "styleClasses": "far fa-envelope blue"
+    },
+    {
+      "name": "GMail",
+      "url": "https://mail.google.com/mail",
+      "styleClasses": "far fa-envelope red"
+    },
+    {
+      "name": "Slack",
+      "styleClasses": "fab fa-slack purple",
+      "url": "https://app.slack.com/client/"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/Atacan-Celikkol",
+      "styleClasses": "fab fa-github"
+    },
+    {
+      "name": "VS Geek",
+      "url": "https://geek.visualstudio.com",
+      "styleClasses": "fab fa-git"
+    }
+  ]
+}
