@@ -1,5 +1,5 @@
 # OS-Home
-Angular 8.3.4 Google Chrome StartPage Extension
+Angular 8.2.12 Google Chrome StartPage Extension
 
 ## Demo
 https://atacan-celikkol.github.io/OS-Home/home
