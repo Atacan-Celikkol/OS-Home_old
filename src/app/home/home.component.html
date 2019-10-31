@@ -18,14 +18,16 @@
     <div class="text-center row" dragula="BOOKMARKS" [(dragulaModel)]="bookmarkService.Bookmarks">
       <ng-container *ngIf="bookmarkService.Bookmarks">
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6" *ngFor="let bookmark of bookmarkService.Bookmarks">
-          <bookmark-button [contextMenu]="bookmarkContext" [contextMenuSubject]="bookmark" [bookmark]="bookmark"></bookmark-button>
+          <bookmark-button [contextMenu]="bookmarkContext" [contextMenuSubject]="bookmark" [bookmark]="bookmark">
+          </bookmark-button>
         </div>
       </ng-container>
     </div>
 
     <div class="text-center row">
-      <div class="col-auto">
-        <button class="btn btn-outline-light os-dark d-none-xs" (click)="createBookmark(false)"><i class="fa fa-plus"></i></button>
+      <div class="col-auto z-9999">
+        <button class="btn btn-outline-light os-dark d-none-xs" (click)="createBookmark(false)"><i
+            class="fa fa-plus"></i></button>
       </div>
     </div>
   </div>
@@ -38,13 +40,16 @@
             <div class="float-right">
               <div class="d-inline-flex align-items-center">
                 <div class="d-inline-flex d-none-xs">
-                  <button class="btn btn-outline-light os-dark" (click)="createBookmark(true)"><i class="fa fa-plus"></i></button>
+                  <button class="btn btn-outline-light os-dark" (click)="createBookmark(true)"><i
+                      class="fa fa-plus"></i></button>
                 </div>
                 <div class="d-inline-flex">
                   <ng-container *ngIf="bookmarkService.FooterBookmarks">
-                    <div class="d-inline-flex ml-2 m-auto-xs w-auto-xs" dragula="FOOTER-BOOKMARKS" [(dragulaModel)]="bookmarkService.FooterBookmarks">
-                      <bookmark-button [contextMenu]="footerBookmarkContext" *ngFor="let bookmark of bookmarkService.FooterBookmarks" [contextMenuSubject]="bookmark"
-                                       [bookmark]="bookmark" [isFooter]="true">
+                    <div class="d-inline-flex ml-2 m-auto-xs w-auto-xs" dragula="FOOTER-BOOKMARKS"
+                      [(dragulaModel)]="bookmarkService.FooterBookmarks">
+                      <bookmark-button [contextMenu]="footerBookmarkContext"
+                        *ngFor="let bookmark of bookmarkService.FooterBookmarks" [contextMenuSubject]="bookmark"
+                        [bookmark]="bookmark" [isFooter]="true">
                       </bookmark-button>
                     </div>
                   </ng-container>
