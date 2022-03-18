@@ -11,7 +11,7 @@
                   <b>$</b>
                </div>
                <b class="currency-value">
-                  {{exchangeRates.rates.USD}}
+                  {{exchangeRates.data.USD}}
                </b>
             </div>
             <div class="currency-container">
@@ -19,7 +19,7 @@
                   <b>€</b>
                </div>
                <b class="currency-value">
-                  {{exchangeRates.rates.EUR}}
+                  {{exchangeRates.data.EUR}}
                </b>
             </div>
             <div class="currency-container">
@@ -27,17 +27,25 @@
                   <b>£</b>
                </div>
                <b class="currency-value">
-                  {{exchangeRates.rates.GBP}}
+                  {{exchangeRates.data.GBP}}
                </b>
             </div>
             <div class="currency-container">
                <div class="currency-sign-container">
+                  <b>¥</b>
+               </div>
+               <b class="currency-value">
+                  {{exchangeRates.data.JPY}}
+               </b>
+            </div>
+            <!-- <div class="currency-container">
+               <div class="currency-sign-container">
                   <b>฿</b>
                </div>
                <b class="currency-value">
-                  {{exchangeRates.rates.BTC}}
+                  {{exchangeRates.data.BTC}}
                </b>
-            </div>
+            </div> -->
          </div>
       </ng-container>
    </div>

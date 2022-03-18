@@ -6,9 +6,9 @@ import { environment } from '../../../environments/environment';
 import { CurrenciesResponse } from '../models/currency';
 
 const Endpoints = {
-   BaseUrl: 'http://data.fixer.io/api/',
-   GetLatest: (symbols) =>
-      `${Endpoints.BaseUrl}latest?access_key=${environment.fixerIo_api_key}&symbols=${symbols}`,
+   BaseUrl: 'https://api.currencyapi.com/v2',
+   GetLatest: () =>
+      `${Endpoints.BaseUrl}/latest?apikey=${environment.freeCurrency_api_key}&base_currency=TRY`,
 };
 
 @Injectable({
@@ -18,8 +18,8 @@ export class CurrencyService {
    constructor(private httpClient: HttpClient) {
    }
 
-   getCurrencies(base, currencies): Observable<CurrenciesResponse> {
-      const url = Endpoints.GetLatest(currencies);
+   getCurrencies(): Observable<CurrenciesResponse> {
+      const url = Endpoints.GetLatest();
 
       return this.httpClient.get<CurrenciesResponse>(url).pipe(
          retry(1),

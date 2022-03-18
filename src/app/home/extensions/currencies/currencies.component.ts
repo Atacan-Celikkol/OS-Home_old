@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Currencies, CurrenciesResponse } from '../../../core/models/currency';
+import { CurrenciesResponse } from '../../../core/models/currency';
 import { CurrencyService } from '../../../core/services/currency.service';
 
 @Component({
@@ -12,11 +12,15 @@ export class CurrenciesComponent {
   isLoading = true;
 
   constructor(private currencyService: CurrencyService) {
-    this.currencyService.getCurrencies(Currencies.TRY, `${Currencies.TRY},${Currencies.USD},${Currencies.EUR},${Currencies.GBP},${Currencies.BTC}`).subscribe(x => {
-      Object.keys(x.rates).forEach(t => {
-        if (t !== 'TRY') {
-          x.rates[t] = this.getReadableValue(x.rates.TRY, x.rates[t]);
+    this.currencyService.getCurrencies().subscribe(x => {
+      Object.keys(x.data).forEach(t => {
+        if (t === 'BTC') {
+          x.data[t] = x.data[t] / 1000;
         }
+        if (t === 'JPY') {
+          x.data[t] = x.data[t] / 100;
+        }
+        x.data[t] = this.getReadableValue(1, x.data[t]);
       });
       this.exchangeRates = x;
       this.isLoading = false;
@@ -24,7 +28,6 @@ export class CurrenciesComponent {
   }
 
   getReadableValue(val1: number, val2: number) {
-    const split = (val1 / val2).toString().split('.');
-    return split[0] + '.' + split[1].slice(0, 2);
+    return (val1 / val2).toFixed(2).toString();
   }
 }
